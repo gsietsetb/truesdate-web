@@ -63,10 +63,10 @@
   <text x="80" y="340" fill="url(#hg)" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="800" letter-spacing="-0.03em">conexiones reales</text>
   <text x="80" y="420" fill="white" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="800" letter-spacing="-0.03em" opacity="0.6">sin swipes.</text>
   <!-- Subtitle -->
-  <text x="80" y="480" fill="white" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="400" opacity="0.5">Ciencia + personalidad + planes reales · Barcelona</text>
+  <text x="80" y="480" fill="white" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="400" opacity="0.5">Ciencia + personalidad + planes reales ï¿½ Barcelona</text>
   <!-- Bottom bar -->
   <rect x="0" y="590" width="1200" height="40" fill="#0a0a0f" opacity="0.8"/>
-  <text x="80" y="617" fill="white" font-family="system-ui, -apple-system, sans-serif" font-size="16" opacity="0.4">truesdate.com · Citas basadas en compatibilidad real</text>
+  <text x="80" y="617" fill="white" font-family="system-ui, -apple-system, sans-serif" font-size="16" opacity="0.4">truesdate.com ï¿½ Citas basadas en compatibilidad real</text>
   <!-- Compatibility badge -->
   <rect x="950" y="440" rx="20" ry="20" width="160" height="40" fill="#f43f5e" fill-opacity="0.15" stroke="#f43f5e" stroke-width="1" stroke-opacity="0.3"/>
   <text x="990" y="466" fill="#f43f5e" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="600">94% match d</text>
