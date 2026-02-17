@@ -1,0 +1,16 @@
+{
+  "name": "TruesDate",
+  "short_name": "TruesDate",
+  "description": "Tu red de conexiones reales sin swipes. Ciencia + personalidad + planes reales en Barcelona.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#f43f5e",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

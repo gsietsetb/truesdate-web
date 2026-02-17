@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="heart-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="50%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <linearGradient id="node-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+  </defs>
+  <!-- Heart shape -->
+  <path d="M256 450C256 450 48 300 48 176C48 100 108 48 176 48C220 48 256 80 256 80C256 80 292 48 336 48C404 48 464 100 464 176C464 300 256 450 256 450Z" fill="url(#heart-grad)"/>
+  <!-- Neural network nodes on heart -->
+  <circle cx="176" cy="160" r="20" fill="white" opacity="0.9"/>
+  <circle cx="336" cy="160" r="20" fill="white" opacity="0.9"/>
+  <circle cx="256" cy="240" r="24" fill="white" opacity="0.95"/>
+  <circle cx="196" cy="300" r="16" fill="white" opacity="0.7"/>
+  <circle cx="316" cy="300" r="16" fill="white" opacity="0.7"/>
+  <circle cx="256" cy="370" r="14" fill="white" opacity="0.5"/>
+  <!-- Neural connections -->
+  <line x1="176" y1="160" x2="256" y2="240" stroke="white" stroke-width="2.5" opacity="0.6"/>
+  <line x1="336" y1="160" x2="256" y2="240" stroke="white" stroke-width="2.5" opacity="0.6"/>
+  <line x1="176" y1="160" x2="336" y2="160" stroke="white" stroke-width="2" opacity="0.4"/>
+  <line x1="256" y1="240" x2="196" y2="300" stroke="white" stroke-width="2" opacity="0.5"/>
+  <line x1="256" y1="240" x2="316" y2="300" stroke="white" stroke-width="2" opacity="0.5"/>
+  <line x1="196" y1="300" x2="316" y2="300" stroke="white" stroke-width="1.5" opacity="0.3"/>
+  <line x1="196" y1="300" x2="256" y2="370" stroke="white" stroke-width="1.5" opacity="0.3"/>
+  <line x1="316" y1="300" x2="256" y2="370" stroke="white" stroke-width="1.5" opacity="0.3"/>
+  <!-- Pulse dots on nodes -->
+  <circle cx="176" cy="160" r="6" fill="url(#node-grad)"/>
+  <circle cx="336" cy="160" r="6" fill="url(#node-grad)"/>
+  <circle cx="256" cy="240" r="8" fill="url(#heart-grad)"/>
+  <circle cx="196" cy="300" r="5" fill="url(#node-grad)"/>
+  <circle cx="316" cy="300" r="5" fill="url(#node-grad)"/>
+  <circle cx="256" cy="370" r="4" fill="url(#node-grad)"/>
+</svg>

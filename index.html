@@ -1,15 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>TruesDate</title>
-    </head>
+    <!-- Primary SEO -->
+    <title>TruesDate · Tu red de conexiones reales sin swipes | Barcelona</title>
+    <meta name="description" content="Ciencia + personalidad + planes reales. Nuestro algoritmo conecta personas compatibles y organiza citas cada semana en Barcelona. Sin swipes, sin ghosting." />
+    <meta name="keywords" content="citas Barcelona, dating app, conexiones reales, compatibilidad, test personalidad, speed dating, planes Barcelona, encontrar pareja, match, citas sin swipes" />
+    <meta name="author" content="TruesDate" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://truesdate.com/" />
 
-    <body>
-      <div id="root"></div>
-      <script type="module" src="/src/main.tsx"></script>
-    </body>
-  </html>
-  
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/logo.svg" />
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#0a0a0f" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="msapplication-TileColor" content="#f43f5e" />
+
+    <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://truesdate.com/" />
+    <meta property="og:title" content="TruesDate · Conexiones reales sin swipes" />
+    <meta property="og:description" content="Nuestro algoritmo analiza tu personalidad en 30 preguntas y te conecta con personas compatibles. Citas reales cada semana en Barcelona." />
+    <meta property="og:image" content="https://truesdate.com/og-image.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="TruesDate - Tu red de conexiones reales sin swipes" />
+    <meta property="og:site_name" content="TruesDate" />
+    <meta property="og:locale" content="es_ES" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://truesdate.com/" />
+    <meta name="twitter:title" content="TruesDate · Conexiones reales sin swipes" />
+    <meta name="twitter:description" content="Ciencia + personalidad + citas reales cada semana en Barcelona. Test de 30 preguntas → match basado en compatibilidad real." />
+    <meta name="twitter:image" content="https://truesdate.com/og-image.svg" />
+    <meta name="twitter:image:alt" content="TruesDate - Tu red de conexiones reales sin swipes" />
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "TruesDate",
+      "url": "https://truesdate.com",
+      "description": "Tu red de conexiones reales sin swipes. Ciencia + personalidad + planes reales en Barcelona.",
+      "applicationCategory": "DatingApplication",
+      "operatingSystem": "Web",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Gratis",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "Test de personalidad completo, 3 matches al mes, 1 plan semanal"
+        },
+        {
+          "@type": "Offer",
+          "name": "Premium",
+          "price": "19",
+          "priceCurrency": "EUR",
+          "billingIncrement": "P1M",
+          "description": "Matches ilimitados, todos los planes semanales, radar de compatibilidad detallado"
+        }
+      ],
+      "areaServed": {
+        "@type": "City",
+        "name": "Barcelona",
+        "addressCountry": "ES"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "TruesDate",
+        "url": "https://truesdate.com"
+      }
+    }
+    </script>
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://syjrsgqrdsskxbxztjhw.supabase.co" />
+    <link rel="dns-prefetch" href="https://syjrsgqrdsskxbxztjhw.supabase.co" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
