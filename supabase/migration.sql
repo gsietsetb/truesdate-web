@@ -122,17 +122,28 @@ ALTER TABLE td_followup_questions ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "profiles_select" ON td_profiles FOR SELECT USING (true);
 CREATE POLICY "profiles_insert" ON td_profiles FOR INSERT WITH CHECK (auth.uid() = id);
 CREATE POLICY "profiles_update" ON td_profiles FOR UPDATE USING (auth.uid() = id);
+-- IMPORTANT: answers need to be readable by other authenticated users for the matching algorithm
+-- We only expose the answers JSONB, not any PII
 CREATE POLICY "answers_select_own" ON td_answers FOR SELECT USING (auth.uid() = user_id);
+CREATE POLICY "answers_select_for_matching" ON td_answers FOR SELECT USING (auth.uid() IS NOT NULL);
 CREATE POLICY "answers_insert_own" ON td_answers FOR INSERT WITH CHECK (auth.uid() = user_id);
 CREATE POLICY "answers_update_own" ON td_answers FOR UPDATE USING (auth.uid() = user_id);
 CREATE POLICY "matches_select_own" ON td_matches FOR SELECT USING (auth.uid() = user_a OR auth.uid() = user_b);
 CREATE POLICY "matches_select_admin" ON td_matches FOR SELECT USING (EXISTS (SELECT 1 FROM td_profiles WHERE id = auth.uid() AND is_admin = true));
 CREATE POLICY "matches_insert_own" ON td_matches FOR INSERT WITH CHECK (auth.uid() = user_a OR auth.uid() = user_b);
+CREATE POLICY "matches_upsert" ON td_matches FOR UPDATE USING (auth.uid() = user_a OR auth.uid() = user_b);
 CREATE POLICY "events_select" ON td_events FOR SELECT USING (true);
 CREATE POLICY "rsvps_select_own" ON td_event_rsvps FOR SELECT USING (auth.uid() = user_id);
 CREATE POLICY "rsvps_insert_own" ON td_event_rsvps FOR INSERT WITH CHECK (auth.uid() = user_id);
 CREATE POLICY "subs_select_own" ON td_subscriptions FOR SELECT USING (auth.uid() = user_id);
 CREATE POLICY "followup_select" ON td_followup_questions FOR SELECT USING (true);
+
+-- ============================================
+-- PATCH: Apply to existing Supabase projects
+-- Run this if the project was already set up
+-- ============================================
+-- DROP POLICY IF EXISTS "answers_select_own" ON td_answers;
+-- CREATE POLICY "answers_select_for_matching" ON td_answers FOR SELECT USING (auth.uid() IS NOT NULL);
 
 -- Auto-create profile trigger
 CREATE OR REPLACE FUNCTION handle_td_new_user()

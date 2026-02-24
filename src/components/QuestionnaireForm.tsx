@@ -13,151 +13,269 @@ interface QuestionnaireFormProps {
   user: any;
 }
 
+// ============================================================
+// TRUESDATE QUESTIONS v2 — 16 questions for real matching
+// Dimensions: relationship goal · children · lifestyle · art
+//             sexuality · communication · love language
+//             attachment style · values · health · diet
+//             living plans · relationship rhythm · ambition
+//             spirituality · dealbreaker
+// ============================================================
 const questions = [
+  // --- BLOCK 1: WHAT YOU WANT ---
   {
     id: "relationship_goal",
     category: "pareja",
-    question: "Que buscas en una relacion?",
+    question: "Que buscas en este momento?",
     type: "scale",
     options: [
-      { value: 1, label: "Algo casual", emoji: "😎" },
-      { value: 2, label: "Conocer gente", emoji: "🤝" },
-      { value: 3, label: "Citas regulares", emoji: "💃" },
-      { value: 4, label: "Relacion seria", emoji: "💕" },
-      { value: 5, label: "Alma gemela", emoji: "💍" },
+      { value: 1, label: "Algo casual sin etiquetas", emoji: "😎" },
+      { value: 2, label: "Conocer gente nueva", emoji: "🤝" },
+      { value: 3, label: "Citas con calma", emoji: "💃" },
+      { value: 4, label: "Relacion seria y comprometida", emoji: "💕" },
+      { value: 5, label: "Mi persona para toda la vida", emoji: "💍" },
     ],
   },
   {
     id: "children_desire",
-    category: "hijos",
-    question: "Que opinas sobre tener hijos?",
+    category: "familia",
+    question: "Quieres tener hijos en el futuro?",
     type: "scale",
     options: [
-      { value: 1, label: "Para nada", emoji: "🚫" },
-      { value: 2, label: "No creo", emoji: "🤷" },
-      { value: 3, label: "Tal vez", emoji: "🤔" },
+      { value: 1, label: "Definitivamente no", emoji: "🚫" },
+      { value: 2, label: "No lo creo", emoji: "🤷" },
+      { value: 3, label: "Aun no lo se", emoji: "🤔" },
       { value: 4, label: "Si, algun dia", emoji: "👶" },
-      { value: 5, label: "Es mi prioridad", emoji: "👨‍👩‍👧‍👦" },
+      { value: 5, label: "Es lo que mas quiero", emoji: "👨‍👩‍👧‍👦" },
     ],
   },
+
+  // --- BLOCK 2: LOVE LANGUAGE ---
   {
-    id: "party_lifestyle",
-    category: "fiesta",
-    question: "Cuanto te gusta salir de fiesta?",
+    id: "love_language",
+    category: "amor",
+    question: "Como te sientes mas querido/a?",
+    type: "multiple",
+    options: [
+      { value: "words", label: "Palabras de afirmacion", emoji: "💬" },
+      { value: "time", label: "Tiempo de calidad", emoji: "⏰" },
+      { value: "acts", label: "Actos de servicio", emoji: "🛠️" },
+      { value: "touch", label: "Contacto fisico", emoji: "🤗" },
+      { value: "gifts", label: "Regalos y detalles", emoji: "🎁" },
+    ],
+  },
+
+  // --- BLOCK 3: ATTACHMENT STYLE ---
+  {
+    id: "attachment_style",
+    category: "vinculo",
+    question: "Como eres en las relaciones?",
+    type: "multiple",
+    options: [
+      { value: "secure", label: "Seguro/a: confio y soy constante", emoji: "🌳" },
+      { value: "anxious", label: "Necesito mucha reassurance", emoji: "📱" },
+      { value: "avoidant", label: "Valoro mucho mi espacio propio", emoji: "🦅" },
+      { value: "balanced", label: "Equilibrado, depende de la persona", emoji: "⚖️" },
+    ],
+  },
+
+  // --- BLOCK 4: COMMUNICATION ---
+  {
+    id: "communication_style",
+    category: "comunicacion",
+    question: "Como gestionas los conflictos?",
+    type: "multiple",
+    options: [
+      { value: "direct", label: "Lo hablo de frente y enseguida", emoji: "🗣️" },
+      { value: "time", label: "Me tomo un tiempo y luego hablo", emoji: "⏳" },
+      { value: "writing", label: "Prefiero escribirlo primero", emoji: "✍️" },
+      { value: "humor", label: "Con humor lo suavizo", emoji: "😄" },
+      { value: "avoid", label: "Tiendo a evitar el conflicto", emoji: "🏃" },
+    ],
+  },
+
+  // --- BLOCK 5: SEXUALITY ---
+  {
+    id: "sexual_desire",
+    category: "intimidad",
+    question: "Que importancia tiene la intimidad fisica en tu relacion ideal?",
     type: "scale",
     options: [
-      { value: 1, label: "Odio las fiestas", emoji: "🏠" },
-      { value: 2, label: "Muy rara vez", emoji: "📚" },
-      { value: 3, label: "De vez en cuando", emoji: "🍷" },
-      { value: 4, label: "Los fines de semana", emoji: "🎉" },
+      { value: 1, label: "No es un factor clave", emoji: "🤝" },
+      { value: 2, label: "Poco importante", emoji: "💙" },
+      { value: 3, label: "Importante pero no lo primero", emoji: "❤️" },
+      { value: 4, label: "Muy importante", emoji: "💗" },
+      { value: 5, label: "Es fundamental para mi", emoji: "🔥" },
+    ],
+  },
+
+  // --- BLOCK 6: LIFESTYLE ---
+  {
+    id: "party_lifestyle",
+    category: "social",
+    question: "Cual es tu vida social?",
+    type: "scale",
+    options: [
+      { value: 1, label: "Me quedo en casa casi siempre", emoji: "🏠" },
+      { value: 2, label: "Salgo muy poco", emoji: "📚" },
+      { value: 3, label: "Salgo de vez en cuando", emoji: "🍷" },
+      { value: 4, label: "Casi todos los fines de semana", emoji: "🎉" },
       { value: 5, label: "Soy un party animal", emoji: "🪩" },
     ],
   },
   {
-    id: "artistic_side",
-    category: "arte",
-    question: "Como de importante es el arte y la cultura en tu vida?",
-    type: "scale",
-    options: [
-      { value: 1, label: "No me interesa", emoji: "📺" },
-      { value: 2, label: "Poco", emoji: "🎬" },
-      { value: 3, label: "Me gusta", emoji: "🎨" },
-      { value: 4, label: "Es importante", emoji: "🎭" },
-      { value: 5, label: "Es mi pasion", emoji: "🖼️" },
-    ],
-  },
-  {
-    id: "sexual_desire",
-    category: "pasion",
-    question: "Que importancia tiene la intimidad fisica para ti?",
-    type: "scale",
-    options: [
-      { value: 1, label: "No es importante", emoji: "🤝" },
-      { value: 2, label: "Poco importante", emoji: "💙" },
-      { value: 3, label: "Normal", emoji: "❤️" },
-      { value: 4, label: "Muy importante", emoji: "💗" },
-      { value: 5, label: "Fundamental", emoji: "🔥" },
-    ],
-  },
-  {
-    id: "childhood_trauma",
-    category: "psicologia",
-    question: "Que experiencia de tu infancia te ha marcado mas?",
-    type: "multiple",
-    options: [
-      { value: "divorce", label: "Divorcio de padres", emoji: "💔" },
-      { value: "death", label: "Muerte de ser querido", emoji: "🕊️" },
-      { value: "bullying", label: "Bullying escolar", emoji: "😞" },
-      { value: "moving", label: "Mudanzas frecuentes", emoji: "📦" },
-      { value: "financial", label: "Problemas economicos", emoji: "💸" },
-      { value: "none", label: "Infancia feliz", emoji: "☀️" },
-    ],
-  },
-  {
-    id: "relationship_fear",
-    category: "psicologia",
-    question: "Cual es tu mayor miedo en una relacion?",
-    type: "multiple",
-    options: [
-      { value: "abandonment", label: "Que me abandonen", emoji: "😢" },
-      { value: "commitment", label: "Comprometerme demasiado", emoji: "⛓️" },
-      { value: "betrayal", label: "Infidelidad", emoji: "💔" },
-      { value: "incompatibility", label: "No ser compatible", emoji: "🧩" },
-      { value: "losing_identity", label: "Perder mi identidad", emoji: "🪞" },
-      { value: "no_fear", label: "No tengo miedos", emoji: "💪" },
-    ],
-  },
-  {
-    id: "cat_allergy",
-    category: "practico",
-    question: "Eres alergico a los gatos?",
-    type: "boolean",
-    options: [
-      { value: true, label: "Si, soy alergico", emoji: "🤧" },
-      { value: false, label: "No, me encantan", emoji: "🐱" },
-    ],
-  },
-  {
     id: "ideal_saturday",
-    category: "lifestyle",
-    question: "Cual es tu sabado ideal?",
+    category: "ocio",
+    question: "Tu sabado perfecto seria...",
     type: "multiple",
     options: [
-      { value: "reading", label: "Leer en casa tranquilo", emoji: "📖" },
-      { value: "party", label: "Fiesta hasta tarde", emoji: "🎉" },
-      { value: "nature", label: "Excursion en la naturaleza", emoji: "🏔️" },
-      { value: "culture", label: "Museo y exposiciones", emoji: "🏛️" },
-      { value: "sports", label: "Deporte y actividad fisica", emoji: "🏃" },
-      { value: "friends", label: "Cena con amigos", emoji: "🍕" },
+      { value: "nature", label: "Senderismo o playa", emoji: "🏔️" },
+      { value: "culture", label: "Museo, teatro o concierto", emoji: "🎭" },
+      { value: "sports", label: "Deporte o gym", emoji: "🏃" },
+      { value: "home", label: "Netflix, sofa y descanso", emoji: "🛋️" },
+      { value: "friends", label: "Comida larga con amigos", emoji: "🍕" },
+      { value: "explore", label: "Explorar algo nuevo", emoji: "🗺️" },
     ],
   },
+
+  // --- BLOCK 7: HEALTH & ACTIVITY ---
   {
-    id: "communication_style",
-    category: "comunicacion",
-    question: "Como prefieres resolver los conflictos?",
+    id: "health_lifestyle",
+    category: "salud",
+    question: "Cual es tu relacion con el deporte y la salud?",
+    type: "scale",
+    options: [
+      { value: 1, label: "No hago ejercicio", emoji: "🛋️" },
+      { value: 2, label: "Camino y poco mas", emoji: "🚶" },
+      { value: 3, label: "Ejercicio ocasional", emoji: "🚴" },
+      { value: 4, label: "Gym o deporte regular", emoji: "💪" },
+      { value: 5, label: "El deporte es central en mi vida", emoji: "🏆" },
+    ],
+  },
+
+  // --- BLOCK 8: DIET ---
+  {
+    id: "diet",
+    category: "alimentacion",
+    question: "Como comes habitualmente?",
     type: "multiple",
     options: [
-      { value: "direct", label: "Hablando directamente", emoji: "🗣️" },
-      { value: "time", label: "Dandome tiempo primero", emoji: "⏳" },
-      { value: "avoid", label: "Evitando el conflicto", emoji: "🏃‍♂️" },
-      { value: "mediator", label: "Con ayuda externa", emoji: "🤝" },
-      { value: "humor", label: "Con humor", emoji: "😄" },
-      { value: "writing", label: "Por escrito primero", emoji: "✍️" },
+      { value: "omnivore", label: "Como de todo sin filtros", emoji: "🥩" },
+      { value: "flexitarian", label: "Flexitariano, poca carne", emoji: "🥗" },
+      { value: "vegetarian", label: "Vegetariano/a", emoji: "🥦" },
+      { value: "vegan", label: "Vegano/a", emoji: "🌱" },
+      { value: "special", label: "Dieta especial (alergias etc)", emoji: "⚠️" },
+    ],
+  },
+
+  // --- BLOCK 9: CULTURE & ART ---
+  {
+    id: "artistic_side",
+    category: "cultura",
+    question: "Cuanto espacio ocupa la cultura en tu vida?",
+    type: "scale",
+    options: [
+      { value: 1, label: "No me llama mucho", emoji: "📺" },
+      { value: 2, label: "De vez en cuando", emoji: "🎬" },
+      { value: 3, label: "Me gusta bastante", emoji: "🎨" },
+      { value: 4, label: "Es importante para mi", emoji: "🎭" },
+      { value: 5, label: "Es una pasion", emoji: "🖼️" },
+    ],
+  },
+
+  // --- BLOCK 10: AMBITION & CAREER ---
+  {
+    id: "ambition_level",
+    category: "ambicion",
+    question: "Que lugar ocupa tu carrera o proyecto propio en tu vida?",
+    type: "scale",
+    options: [
+      { value: 1, label: "Es solo un medio para vivir", emoji: "🏖️" },
+      { value: 2, label: "Me gusta pero no me obsesiona", emoji: "😌" },
+      { value: 3, label: "Equilibrio trabajo-vida", emoji: "⚖️" },
+      { value: 4, label: "Soy muy ambicioso/a", emoji: "🚀" },
+      { value: 5, label: "Mi proyecto es mi vida", emoji: "🔥" },
+    ],
+  },
+
+  // --- BLOCK 11: SPIRITUALITY / VALUES ---
+  {
+    id: "spirituality",
+    category: "valores",
+    question: "Cual es tu relacion con la espiritualidad o la religion?",
+    type: "multiple",
+    options: [
+      { value: "atheist", label: "Ateo/a convencido/a", emoji: "🔬" },
+      { value: "agnostic", label: "Agnostico, no lo se", emoji: "🤷" },
+      { value: "spiritual", label: "Espiritual pero no religioso/a", emoji: "✨" },
+      { value: "religious_relaxed", label: "Creyente no practicante", emoji: "🙏" },
+      { value: "religious_active", label: "Practicante activo/a", emoji: "⛪" },
+    ],
+  },
+
+  // --- BLOCK 12: WHERE TO LIVE ---
+  {
+    id: "living_plans",
+    category: "futuro",
+    question: "Donde te ves viviendo en 5 anos?",
+    type: "multiple",
+    options: [
+      { value: "city", label: "Ciudad, siempre ciudad", emoji: "🏙️" },
+      { value: "abroad", label: "Fuera de Espana", emoji: "✈️" },
+      { value: "nature", label: "Cerca de la naturaleza", emoji: "🌲" },
+      { value: "flexible", label: "Flexible, donde surja", emoji: "🗺️" },
+      { value: "hometown", label: "Cerca de mi familia", emoji: "🏡" },
+    ],
+  },
+
+  // --- BLOCK 13: RELATIONSHIP RHYTHM ---
+  {
+    id: "relationship_rhythm",
+    category: "convivencia",
+    question: "Como te imaginas el dia a dia en pareja?",
+    type: "multiple",
+    options: [
+      { value: "together_always", label: "Juntos la mayor parte del tiempo", emoji: "🤝" },
+      { value: "together_evenings", label: "Tardes/noches juntos, dias libres", emoji: "🌙" },
+      { value: "own_space", label: "Cada uno con su espacio", emoji: "🦅" },
+      { value: "living_together", label: "Quiero convivir pronto", emoji: "🏠" },
+      { value: "slow", label: "Me lo tomo con calma", emoji: "🐢" },
+    ],
+  },
+
+  // --- BLOCK 14: DEALBREAKER ---
+  {
+    id: "dealbreaker",
+    category: "limites",
+    question: "Que es un dealbreaker absoluto para ti?",
+    type: "multiple",
+    options: [
+      { value: "smoking", label: "Que fume", emoji: "🚬" },
+      { value: "no_kids", label: "No querer hijos (si yo quiero)", emoji: "👶" },
+      { value: "wants_kids", label: "Querer hijos (si yo no quiero)", emoji: "🚫" },
+      { value: "long_distance", label: "Larga distancia", emoji: "✈️" },
+      { value: "none", label: "No tengo dealbreakers fijos", emoji: "🤷" },
     ],
   },
 ];
 
 const PROGRESS_MESSAGES = [
   "Empezamos a conocerte...",
-  "Mapeando tus valores...",
-  "Descubriendo tu estilo...",
-  "Analizando tu vibe...",
-  "Entendiendo tu mundo...",
-  "Casi en la mitad del camino...",
-  "Profundizando...",
-  "Detalles que importan...",
-  "Tu perfil toma forma...",
-  "Ultimo paso antes de tu match!",
+  "Tus planes de futuro...",
+  "Tu lenguaje del amor...",
+  "Como te vinculas...",
+  "Tu estilo de comunicacion...",
+  "La quimica importa...",
+  "Tu vida social...",
+  "Tu ocio ideal...",
+  "Tu relacion con el deporte...",
+  "Habitos y alimentacion...",
+  "Tu lado cultural...",
+  "Tus ambiciones...",
+  "Tus valores profundos...",
+  "Donde quieres vivir...",
+  "Tu ritmo en pareja...",
+  "Ultimo paso - tus limites!",
 ];
 
 const MATCH_PHOTOS = [

@@ -1,0 +1,9 @@
+name = "truesdate-web"
+compatibility_date = "2024-09-23"
+pages_build_output_dir = "dist"
+
+[env.production]
+name = "truesdate-web"
+
+[env.preview]
+name = "truesdate-web-preview"
